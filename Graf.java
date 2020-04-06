@@ -19,6 +19,9 @@ public class Graf {
             graf[b][a]=1;
         }
 
+
+        long start = System.currentTimeMillis();
+
         int[][] mnozenje = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -41,7 +44,9 @@ public class Graf {
         for (int i = 0; i < n; i++) {
             sum += mnozenje2[i][i];
         }
-        System.out.println("Stevilo trikotnikov: "+ sum/6);
+        long finish = System.currentTimeMillis();
+        long timeElapsed = finish - start;
+        System.out.println("Stevilo trikotnikov: "+ sum/6 + ", cas: "+timeElapsed+"ms");
 
         // System.out.println(Arrays.deepToString(graf));
         // System.out.println(Arrays.deepToString(mnozenje));

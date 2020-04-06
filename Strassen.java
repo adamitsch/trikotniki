@@ -99,13 +99,16 @@ public class Strassen {
             graf[b][a]=1;
         }
 
+        long start = System.currentTimeMillis();
         
         int [][] tretja = strassen(strassen(graf,graf),graf);
         int sum = 0;
         for (int i = 0; i < velikostMatrik; i++) {
             sum += tretja[i][i];
         }
-        System.out.println("vseh trikotnikov je: "+sum/6);
+        long finish = System.currentTimeMillis();
+        long timeElapsed = finish - start;
+        System.out.println("Stevilo trikotnikov: "+ sum/6 + ", cas: "+timeElapsed+"ms");
         // System.out.println(Arrays.deepToString(strassen(strassen(graf,graf),graf)));
 
     }

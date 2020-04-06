@@ -38,6 +38,8 @@ public class Adjlist {
 		//System.out.println(graf.toString());
 		//print(graf);
 
+		long start = System.currentTimeMillis();
+
 		int sum = 0;
 		for (int i = 0; i < graf.size(); i++) {
 			for(int j : graf.get(i)){
@@ -49,12 +51,9 @@ public class Adjlist {
 			}
 		}
 
-		System.out.println(sum / 6);
+		long finish = System.currentTimeMillis();
+        long timeElapsed = finish - start;
+        System.out.println("Stevilo trikotnikov: "+ sum/6 + ", cas: "+timeElapsed+"ms");
 
-		//*
-		
-		/*/
-		
-		//*/
 	}
 }

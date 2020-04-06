@@ -14,6 +14,8 @@ public class Bruteforce {
             graf[a][b]=true;
             graf[b][a]=true;
         }
+        long start = System.currentTimeMillis();
+        
         int count = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -24,7 +26,10 @@ public class Bruteforce {
                 }
             }
         }
-        System.out.println(count/6);
+
+        long finish = System.currentTimeMillis();
+        long timeElapsed = finish - start;
+        System.out.println("Stevilo trikotnikov: "+ count/6 + ", cas: "+timeElapsed+"ms");
 
     }
 }
