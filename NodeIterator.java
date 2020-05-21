@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Adjlist {
+public class NodeIterator {
 
 	static void dodajPovezavo(ArrayList<ArrayList<Integer>> graf, int i, int j ) {
 		graf.get(i).add(j);
