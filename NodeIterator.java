@@ -57,3 +57,7 @@ public class NodeIterator {
 
 	}
 }
+
+/*
+dalo bi se izboljšat podobno kot edgeiter: j>i, k>i ?
+*/

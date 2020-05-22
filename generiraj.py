@@ -1,8 +1,8 @@
 import random
 graf = {}
 
-vozlisc = 100
-polnost = 1
+vozlisc = 20
+polnost = 0.15
 
 povezav = 0
 
@@ -21,6 +21,6 @@ for vozlisce in graf:
     for sosed in graf[vozlisce]:
         zapis = zapis+str(vozlisce)+" "+str(sosed)+"\n"
 
-with open('vhod100100.txt', 'w+') as f:
+with open('vhod20.txt', 'w+') as f:
     f.write(zapis)
 

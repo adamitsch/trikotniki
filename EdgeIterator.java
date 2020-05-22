@@ -23,8 +23,20 @@ public class EdgeIterator {
         for (int i = 0; i < povezav; i++) {
             a=sc.nextInt();
             b=sc.nextInt();
+
+            /*
+            za štetje uporabimo izboljšavo iz algoritma "forward"
+                -> topološko urejen graf (implicitno)
             graf.get(a).add(b);
             graf.get(b).add(a);
+            */
+            if(a<b){
+                graf.get(a).add(b);
+            }
+            else{
+                graf.get(b).add(a);
+            }
+
             povezave[i][0] = a;
             povezave[i][1] = b;
         }
@@ -54,10 +66,7 @@ public class EdgeIterator {
             
         }
 
-        System.out.println(count/3+ " je število trikotnikov");
-
-
-        
+        System.out.println(count+ " je število trikotnikov");
 
     }
 
