@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Strassen {
     public static int velikostMatrik;
+    public static int limitVelikost;
 
     static int[][] sestejMatriki( int [][] mat1, int [][] mat2){
         int vel = mat1.length;
@@ -30,11 +31,25 @@ public class Strassen {
         int dimenzija=mat1.length;
         int tempDimenzija=dimenzija/2;
 
+        if(dimenzija <= limitVelikost ){
+            int [][] rezultat = new int[dimenzija][dimenzija];
+            for (int i = 0; i < dimenzija; i++) {
+                for (int j = 0; j < dimenzija; j++) {
+                    for (int k = 0; k < dimenzija; k++) {
+                        rezultat[i][j] += mat1[i][k] * mat2[k][j];
+                    }
+                }
+            }
+            return rezultat;
+        }
+
+        /*
         if(dimenzija == 1){
             int [][] zaReturnat = new int[1][1];
             zaReturnat[0][0] = mat1[0][0] * mat2[0][0];
             return zaReturnat;
         }
+        */
         
         int [][] a11 = new int[tempDimenzija][tempDimenzija];
         int [][] b11 = new int[tempDimenzija][tempDimenzija];
@@ -87,6 +102,8 @@ public class Strassen {
         // povezav
         int m = sc.nextInt();
 
+        limitVelikost = 64;
+
         double potenca = Math.log(n)/Math.log(2);
         velikostMatrik =(int) Math.pow(2, Math.ceil(potenca)); 
 
@@ -112,5 +129,4 @@ public class Strassen {
         // System.out.println(Arrays.deepToString(strassen(strassen(graf,graf),graf)));
 
     }
-
 }
