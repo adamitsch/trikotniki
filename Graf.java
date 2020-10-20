@@ -26,7 +26,9 @@ public class Graf {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 for (int k = 0; k < n; k++) {
-                    mnozenje[i][j] += graf[i][k]*graf[k][j];
+                    //mnozenje2[i][j] += mnozenje[i][k]*graf[k][j];
+                    //transponirana desna matrika
+                    mnozenje[i][j] += graf[i][k]*graf[j][k];
                 }
             }
         }
@@ -35,7 +37,9 @@ public class Graf {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 for (int k = 0; k < n; k++) {
-                    mnozenje2[i][j] += mnozenje[i][k]*graf[k][j];
+                    //mnozenje2[i][j] += mnozenje[i][k]*graf[k][j];
+                    //transponirana desna matrika
+                    mnozenje2[i][j] += mnozenje[i][k]*graf[j][k];
                 }
             }
         }

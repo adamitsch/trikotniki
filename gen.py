@@ -3,8 +3,8 @@ import math
 
 graf = {}
 
-vozlisc = 2000
-polnost = 0.03
+vozlisc = 15000
+polnost = 0.02
 
 povezav = 0
 
@@ -23,9 +23,12 @@ for i in range(vozlisc):
 zapis = ""
 zapis+= str(vozlisc)+" "+str(povezav)+"\n"
 for vozlisce in graf:
+    if vozlisce % 1000 == 0:
+        print(vozlisce)
+
     for sosed in graf[vozlisce]:
         zapis = zapis+str(vozlisce)+" "+str(sosed)+"\n"
 
-with open('vhod2000.txt', 'w+') as f:
-    f.write(zapis)
+with open('vhod15000.txt', 'w+') as f:
+    f.write(zapis)  
 
